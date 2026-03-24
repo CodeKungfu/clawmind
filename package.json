@@ -1,0 +1,63 @@
+{
+  "name": "clawmind",
+  "version": "1.0.0",
+  "description": "ClawMind Local Markdown Context Engine for OpenClaw",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeKungfu/clawmind.git"
+  },
+  "homepage": "https://github.com/CodeKungfu/clawmind#readme",
+  "bugs": {
+    "url": "https://github.com/CodeKungfu/clawmind/issues"
+  },
+  "files": [
+    "dist",
+    "openclaw.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "openclaw": {
+    "id": "clawmind",
+    "build": {
+      "openclawVersion": "2026.3.8",
+      "pluginSdkVersion": "2026.3.8"
+    },
+    "compat": {
+      "pluginApi": ">=1.0.0",
+      "builtWithOpenClawVersion": "2026.3.8",
+      "pluginSdkVersion": "2026.3.8",
+      "minGatewayVersion": "2026.3.8"
+    },
+    "extensions": [
+      "./dist/index.js"
+    ]
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "tsx watch src/index.ts",
+    "prepack": "npm run build",
+    "test": "npm run build"
+  },
+  "keywords": [
+    "openclaw",
+    "plugin",
+    "context-engine",
+    "markdown",
+    "compression",
+    "clawmind"
+  ],
+  "author": "CodeKungfu",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^25.4.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

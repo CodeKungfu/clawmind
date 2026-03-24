@@ -1,0 +1,39 @@
+{
+  "id": "clawmind",
+  "name": "ClawMind Local Markdown Context Engine",
+  "version": "1.0.0",
+  "description": "Compresses OpenClaw session context into a local Markdown summary file and assembles context without network calls.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "compressionThreshold": {
+        "type": "number",
+        "default": 4000,
+        "minimum": 1,
+        "description": "Trigger compaction when accumulated context characters exceed this threshold."
+      },
+      "keepRecentMessages": {
+        "type": "number",
+        "default": 12,
+        "minimum": 1,
+        "description": "How many of the most recent messages to keep verbatim in the runtime context."
+      },
+      "entryCharLimit": {
+        "type": "number",
+        "default": 280,
+        "minimum": 40,
+        "description": "Maximum character length for each summarized Markdown entry."
+      },
+      "summaryDir": {
+        "type": "string",
+        "description": "Optional directory where ClawMind writes generated .md summary files. Defaults next to the session file."
+      },
+      "debug": {
+        "type": "boolean",
+        "default": false,
+        "description": "Enable verbose plugin logs in the OpenClaw gateway."
+      }
+    }
+  }
+}
